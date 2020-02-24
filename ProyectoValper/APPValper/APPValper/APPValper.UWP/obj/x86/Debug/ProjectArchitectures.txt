@@ -1,0 +1,1 @@
+C:\FullStackValper\Full-Stack-Valper\APPValper\APPValper\APPValper.UWP\APPValper.UWP.csproj;x86

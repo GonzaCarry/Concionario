@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Concesionario.Views.Users"
+             xmlns:vm="clr-namespace:Concesionario.ViewModels"
+             Title="Users">
+
+    <Grid>
+
+        <Image Source="fondo.jpg" Aspect="AspectFill" />
+        <BoxView Color="#9E3317" Opacity="0.8" />
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="1" Padding="30,20">
+                <Entry Text="{Binding Username}" Placeholder="Username" PlaceholderColor="White"/>
+                <Entry Text="{Binding Name}" Placeholder="Name" PlaceholderColor="White" />
+                <Entry Text="{Binding Surname}" Placeholder="Surname" PlaceholderColor="White" />
+                <Entry Text="{Binding Phonenumber}" Placeholder="Phone number" PlaceholderColor="White" />
+
+
+            </StackLayout>
+            <Frame Grid.Row="2" HasShadow="True" CornerRadius="10" Margin="20,0,20,0" Padding="0" HeightRequest="120" VerticalOptions="Start" >
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                        <Image Source="save.png" HeightRequest="25" HorizontalOptions="Center"/>
+                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                            <Label Text="Save" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding SaveCommand}"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                        <Image Source="modify.png" HeightRequest="25" HorizontalOptions="Center"/>
+                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                            <Label Text="Modify" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ModifyCommand}"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <StackLayout Grid.Column="2" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                        <Image Source="delete.png" HeightRequest="25" HorizontalOptions="Center"/>
+                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                            <Label Text="Delete" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding DeleteCommand}"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <StackLayout Grid.Column="3" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                        <Image Source="clean.png" HeightRequest="25" HorizontalOptions="Center"/>
+                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                            <Label Text="Clean" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CleanCommand}"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+
+            <ListView x:Name="LvUsers" ItemsSource="{Binding Users}" SeparatorVisibility="None"
+                  Grid.Row="3" Margin="20,20" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate >
+                        <ViewCell>
+                            <Frame BackgroundColor="White" BorderColor="#F0F0F0" Padding="5" Margin="0,0,0,5" HasShadow="False">
+                                <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                                    <Label Text="{Binding Name}" TextColor="White" FontSize="25" VerticalOptions="Center" Margin="5,-5,0,0"/>
+                                    <Label Text="{Binding Username}" TextColor="White" FontSize="25" VerticalOptions="Center" Margin="5,-5,0,0"/>
+                                    <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="-25,0" HorizontalOptions="End" VerticalOptions="Center">
+                                        <Label Text="{Binding Surname}" TextColor="White" FontSize="25" FontAttributes="Bold" VerticalOptions="Center"/>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+        </Grid>
+    </Grid>
+</ContentPage>

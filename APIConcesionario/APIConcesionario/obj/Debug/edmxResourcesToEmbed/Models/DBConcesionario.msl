@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBConcesionarioModelStoreContainer" CdmEntityContainer="DBConcesionarioEntities">
+    <EntitySetMapping Name="Cars">
+      <EntityTypeMapping TypeName="DBConcesionarioModel.Cars">
+        <MappingFragment StoreEntitySet="Cars">
+          <ScalarProperty Name="id_Cars" ColumnName="id_Cars" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="Headquarters" ColumnName="Headquarters" />
+          <ScalarProperty Name="Founder" ColumnName="Founder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Model">
+      <EntityTypeMapping TypeName="DBConcesionarioModel.Model">
+        <MappingFragment StoreEntitySet="Model">
+          <ScalarProperty Name="id_Model" ColumnName="id_Model" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="Potency" ColumnName="Potency" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="DoorsNumber" ColumnName="DoorsNumber" />
+          <ScalarProperty Name="id_Cars" ColumnName="id_Cars" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="DBConcesionarioModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="DBConcesionarioModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="id_Users" ColumnName="id_Users" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="id_Cars" ColumnName="id_Cars" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

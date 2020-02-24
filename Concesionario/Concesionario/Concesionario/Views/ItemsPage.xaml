@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Concesionario.Views.ItemsPage"
+             Title="{Binding Title}"
+             x:Name="BrowseItemsPage">
+
+    <Grid>
+
+        <Image Source="fondo.jpg" Aspect="AspectFill" />
+        <BoxView Color="#9E3317" Opacity="0.8" />
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="1" Padding="15,20">
+                <Frame CornerRadius="50" 
+                    HeightRequest="200"
+                    WidthRequest="350"
+                    HorizontalOptions="Center"
+                    Padding="26"
+                    IsClippedToBounds="True"
+                    BackgroundColor="#140C0A">
+                    <Image Source="Inicio.jpg" 
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"/>
+                </Frame>
+
+            </StackLayout>
+
+
+            <StackLayout Grid.Row="2" Padding="20,15,20,0">
+                <Button Command="{Binding CarsCommand}" Text="car's brands" FontSize="Large" BackgroundColor="white" BorderRadius="20" TextColor="#9E3317" />
+
+                <Button Command="{Binding ModelsCommand}" Text="car's models" FontSize="Large" BackgroundColor="white" BorderRadius="20" TextColor="#9E3317" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="3" Padding="20,0,20,20" VerticalOptions="End">
+                <Button Command="{Binding ExitCommand}" Text="Exit" FontSize="Large" BackgroundColor="white" BorderRadius="20" TextColor="#9E3317" />
+            </StackLayout>
+
+
+        </Grid>
+    </Grid>
+    
+</ContentPage>
+
