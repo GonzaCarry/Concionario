@@ -22,7 +22,7 @@ namespace Concesionario.Resources
         {
             using (var data = new DataAccess())
             {
-                apiUrl = data.GetConnection().Url + "/api/Models";
+                apiUrl = "http://192.168.43.236:40089/Api/Models";
             }
             if (CarsModels == null)
             {

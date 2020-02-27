@@ -42,11 +42,6 @@
                 <Button Command="{Binding ModelsCommand}" Text="car's models" FontSize="Large" BackgroundColor="white" BorderRadius="20" TextColor="#9E3317" />
             </StackLayout>
 
-            <StackLayout Grid.Row="3" Padding="20,0,20,20" VerticalOptions="End">
-                <Button Command="{Binding ExitCommand}" Text="Exit" FontSize="Large" BackgroundColor="white" BorderRadius="20" TextColor="#9E3317" />
-            </StackLayout>
-
-
         </Grid>
     </Grid>
     

@@ -14,7 +14,7 @@ namespace APIConcesionario.Controllers
 {
     public class CarsController : ApiController
     {
-        private DBConcesionarioEntities db = new DBConcesionarioEntities();
+        private DBConcesionario db = new DBConcesionario();
 
         // GET: api/Cars
         public IQueryable<Cars> GetCars()

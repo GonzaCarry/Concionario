@@ -8,16 +8,16 @@ using Xamarin.Forms;
 
 namespace Concesionario.ViewModels
 {
-    class CarsBrandViewModel : Brand
+    class CarsBrandViewModel : CarsBrandModel
     {
-        private ObservableCollection<Brand> BrandsLocal { get; set; }
-        private Task<ObservableCollection<Brand>> BrandsTask { get; set; }
-        private ObservableCollection<Brand> BrandsAux { get; set; }
-        public ObservableCollection<Brand> Brands { get; set; }
+        private ObservableCollection<CarsBrandModel> BrandsLocal { get; set; }
+        private Task<ObservableCollection<CarsBrandModel>> BrandsTask { get; set; }
+        private ObservableCollection<CarsBrandModel> BrandsAux { get; set; }
+        public ObservableCollection<CarsBrandModel> Brands { get; set; }
 
         public string Url { get; private set; }
 
-        Brand model;
+        CarsBrandModel model;
 
         BrandService service = new BrandService();
 
@@ -34,8 +34,8 @@ namespace Concesionario.ViewModels
 
         private void ListView()
         {
-            Brands = new ObservableCollection<Brand>();
-            BrandsLocal = new ObservableCollection<Brand>();
+            Brands = new ObservableCollection<CarsBrandModel>();
+            BrandsLocal = new ObservableCollection<CarsBrandModel>();
             BrandsAux = service.ConsultLocal();
             for (int i = 0; i < BrandsAux.Count; i++)
             {
@@ -52,8 +52,8 @@ namespace Concesionario.ViewModels
             {
                 Brands.Add(BrandsAux[i]);
             }
-            SyncroLocalBrand();
-            SyncroBrand();
+            //SyncroLocalBrand();
+            //SyncroBrand();
         }
 
         private void SyncroBrand()
@@ -90,14 +90,14 @@ namespace Concesionario.ViewModels
         {
             IsBusy = true;
             Guid idBrand = Guid.NewGuid();
-            model = new Brand()
+            model = new CarsBrandModel()
             {
-                BrandName = BrandName,
+                Brand = Brand,
                 Headquarters = Headquarters,
                 Founder = Founder,
-                Id = idBrand.ToString()
+                Id_Cars = idBrand.ToString()
             };
-            if (string.IsNullOrEmpty(model.BrandName))
+            if (string.IsNullOrEmpty(model.Brand))
             {
                 await Application.Current.MainPage.DisplayAlert("Error", "La marca no puede ser nula", "Aceptar");
             }
@@ -118,18 +118,18 @@ namespace Concesionario.ViewModels
         private async Task Modify()
         {
             IsBusy = true;
-            model = new Brand()
+            model = new CarsBrandModel()
             {
-                BrandName = BrandName,
+                Brand = Brand,
                 Headquarters = Headquarters,
                 Founder = Founder,
-                Id = Id
+                Id_Cars = Id_Cars
             };
             service.ModifyLocal(model);
-            var item = Brands.FirstOrDefault(i => i.Id == model.Id);
+            var item = Brands.FirstOrDefault(i => i.Id_Cars == model.Id_Cars);
             if (item != null)
             {
-                item.BrandName = model.BrandName;
+                item.Brand = model.Brand;
                 item.Headquarters = model.Headquarters;
                 item.Founder = model.Founder;
             }
@@ -145,20 +145,20 @@ namespace Concesionario.ViewModels
         private async Task Delete()
         {
             IsBusy = true;
-            model = new Brand()
+            model = new CarsBrandModel()
             {
-                BrandName = BrandName,
+                Brand = Brand,
                 Headquarters = Headquarters,
                 Founder = Founder,
-                Id = Id
+                Id_Cars = Id_Cars
             };
             service.DeleteLocal(model);
-            var item = Brands.FirstOrDefault(i => i.Id == model.Id);
+            var item = Brands.FirstOrDefault(i => i.Id_Cars == model.Id_Cars);
             Brands.Remove(item);
             Clean();
             if (await service.CheckConnection())
             {
-                service.Delete(model.Id);
+                service.Delete(model.Id_Cars);
             }
             await Task.Delay(2000);
             IsBusy = false;
@@ -166,10 +166,10 @@ namespace Concesionario.ViewModels
 
         private void Clean()
         {
-            BrandName = "";
+            Brand = "";
             Headquarters = "";
             Founder = "";
-            Id = "";
+            Id_Cars = "";
         }
     }
 }

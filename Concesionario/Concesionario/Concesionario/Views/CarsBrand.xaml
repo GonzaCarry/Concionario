@@ -21,7 +21,7 @@
             </Grid.RowDefinitions>
 
             <StackLayout Grid.Row="1" Padding="30,20">
-                <Entry Text="{Binding BrandName}" Placeholder="Brand name" PlaceholderColor="White"/>
+                <Entry Text="{Binding Brand}" Placeholder="Brand name" PlaceholderColor="White"/>
                 <Entry Text="{Binding Headquarters}" Placeholder="Headquarters" PlaceholderColor="White" />
                 <Entry Text="{Binding Founder}" Placeholder="Founder" PlaceholderColor="White" />
 
@@ -74,7 +74,7 @@
                 </Grid>
             </Frame>
 
-            <Label Text="{Binding IDBrand}" TextColor="#7D7D7D" FontSize="11" HorizontalOptions="Center"/>
+            <Label Text="{Binding id_Cars}" TextColor="#7D7D7D" FontSize="11" HorizontalOptions="Center"/>
 
             <ListView x:Name="LvBrands" ItemsSource="{Binding Brands}" SeparatorVisibility="None"
                   Grid.Row="3" Margin="20,0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
@@ -83,7 +83,7 @@
                         <ViewCell>
                             <Frame BackgroundColor="White" BorderColor="#F0F0F0" Padding="5" Margin="0,0,0,5" HasShadow="False">
                                 <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                                    <Label Text="{Binding BrandName}" TextColor="#757575" FontSize="25" VerticalOptions="Center" Margin="0,-5,0,0"/>
+                                    <Label Text="{Binding Brand}" TextColor="#757575" FontSize="25" VerticalOptions="Center" Margin="0,-5,0,0"/>
                                     <Label Grid.Column="1" Text="{Binding Headquarters}" TextColor="White" FontSize="25" VerticalOptions="Center" Margin="5,-5,0,0"/>
                                     <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
                                         <Label Text="{Binding Founder}" TextColor="Black" FontSize="20" FontAttributes="Bold" VerticalOptions="Center"/>

@@ -21,7 +21,7 @@ namespace Concesionario.Services
             //connection.CreateTable<Function>();
             connection.CreateTable<Connection>();
             connection.CreateTable<CarsModel>();
-            connection.CreateTable<Brand>();
+            connection.CreateTable<CarsBrandModel>();
             connection.CreateTable<User>();
         }
 
@@ -50,29 +50,29 @@ namespace Concesionario.Services
             return connection.Table<CarsModel>().OrderBy(c => c.ModelName).ToList();
         }
 
-        public void InsertBrand(Brand brand)
+        public void InsertBrand(CarsBrandModel brand)
         {
             connection.Insert(brand);
         }
 
-        public void ModifyBrand(Brand brand)
+        public void ModifyBrand(CarsBrandModel brand)
         {
             connection.Update(brand);
         }
 
-        public void DeleteBrand(Brand brand)
+        public void DeleteBrand(CarsBrandModel brand)
         {
             connection.Delete(brand);
         }
 
-        public Brand GetBrand(int IDBrand)
+        public CarsBrandModel GetBrand(int IDBrand)
         {
-            return connection.Table<Brand>().FirstOrDefault(c => c.Id.Equals(IDBrand));
+            return connection.Table<CarsBrandModel>().FirstOrDefault(c => c.Id_Cars.Equals(IDBrand));
         }
 
-        public List<Brand> GetBrands()
+        public List<CarsBrandModel> GetBrands()
         {
-            return connection.Table<Brand>().OrderBy(c => c.BrandName).ToList();
+            return connection.Table<CarsBrandModel>().OrderBy(c => c.Brand).ToList();
         }
 
         public Connection GetConnection()

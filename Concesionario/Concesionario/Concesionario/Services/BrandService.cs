@@ -15,25 +15,24 @@ namespace Concesionario.Resources
 {
     public class BrandService
     {
-        public ObservableCollection<Brand> Brands { get; set; }
+        public ObservableCollection<CarsBrandModel> Brands { get; set; }
         private string apiUrl;
 
         public BrandService()
         {
-            using (var data = new DataAccess())
-            {
-                apiUrl = "http://192.168.43.236:40089/Api/Cars";
-            }
+            apiUrl = "http://192.168.43.236:40089/Api/Cars";
+
             if (Brands == null)
             {
-                Brands = new ObservableCollection<Brand>();
+                Brands = new ObservableCollection<CarsBrandModel>();
             }
         }
 
-        public async System.Threading.Tasks.Task<ObservableCollection<Brand>> Consult()
+        public async System.Threading.Tasks.Task<ObservableCollection<CarsBrandModel>> Consult()
         {
             try
             {
+                Console.WriteLine("hola" + apiUrl);
                 HttpClient client;
                 using (client = new HttpClient())
                 {
@@ -42,7 +41,7 @@ namespace Concesionario.Resources
                     if (response.IsSuccessStatusCode)
                     {
                         var result = await response.Content.ReadAsStringAsync();
-                        Brands = JsonConvert.DeserializeObject<ObservableCollection<Brand>>(result);
+                        Brands = JsonConvert.DeserializeObject<ObservableCollection<CarsBrandModel>>(result);
                     }
                 }
                 return Brands;
@@ -75,7 +74,7 @@ namespace Concesionario.Resources
             }
         }
 
-        public ObservableCollection<Brand> ConsultLocal()
+        public ObservableCollection<CarsBrandModel> ConsultLocal()
         {
             using (var data = new DataAccess())
             {
@@ -86,10 +85,11 @@ namespace Concesionario.Resources
             return Brands;
         }
 
-        public async void Save(Brand model)
+        public async void Save(CarsBrandModel model)
         {
             try
             {
+                Console.WriteLine(model.Id_Cars + " " + model.Headquarters + " " + model.Founder + " " + model.Brand);
                 HttpClient client;
                 using (client = new HttpClient())
                 {
@@ -111,7 +111,7 @@ namespace Concesionario.Resources
             }
         }
 
-        public void SaveLocal(Brand model)
+        public void SaveLocal(CarsBrandModel model)
         {
             using (var data = new DataAccess())
             {
@@ -119,7 +119,7 @@ namespace Concesionario.Resources
             }
         }
 
-        public async void Modify(Brand model)
+        public async void Modify(CarsBrandModel model)
         {
             try
             {
@@ -129,7 +129,7 @@ namespace Concesionario.Resources
                     client = CreateClient();
                     var json = JsonConvert.SerializeObject(model);
                     var content = new StringContent(json, Encoding.UTF8, "application/json");
-                    Uri apiUrl2 = new Uri(string.Format(apiUrl + "/{0}", model.Id));
+                    Uri apiUrl2 = new Uri(string.Format(apiUrl + "/{0}", model.Id_Cars));
                     HttpResponseMessage response = await client.PutAsync(apiUrl2, content);
                     Console.WriteLine(response.IsSuccessStatusCode);
                 }
@@ -140,7 +140,7 @@ namespace Concesionario.Resources
             }
         }
 
-        public void ModifyLocal(Brand model)
+        public void ModifyLocal(CarsBrandModel model)
         {
             using (var data = new DataAccess())
             {
@@ -165,7 +165,7 @@ namespace Concesionario.Resources
             }
         }
 
-        public void DeleteLocal(Brand model)
+        public void DeleteLocal(CarsBrandModel model)
         {
             using (var data = new DataAccess())
             {

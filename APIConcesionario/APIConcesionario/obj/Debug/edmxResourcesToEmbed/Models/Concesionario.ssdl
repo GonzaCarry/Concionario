@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBConcesionarioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cars">
+    <Key>
+      <PropertyRef Name="id_Cars" />
+    </Key>
+    <Property Name="id_Cars" Type="nchar" MaxLength="36" Nullable="false" />
+    <Property Name="Brand" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Headquarters" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Founder" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Model">
+    <Key>
+      <PropertyRef Name="id_Model" />
+    </Key>
+    <Property Name="id_Model" Type="nchar" MaxLength="36" Nullable="false" />
+    <Property Name="ModelName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Potency" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Color" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DoorsNumber" Type="int" Nullable="false" />
+    <Property Name="id_Cars" Type="nchar" MaxLength="36" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="id_Users" />
+    </Key>
+    <Property Name="id_Users" Type="nchar" MaxLength="36" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PhoneNumber" Type="int" Nullable="false" />
+    <Property Name="id_Cars" Type="nchar" MaxLength="36" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_CarModel">
+    <End Role="Cars" Type="Self.Cars" Multiplicity="1" />
+    <End Role="Model" Type="Self.Model" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cars">
+        <PropertyRef Name="id_Cars" />
+      </Principal>
+      <Dependent Role="Model">
+        <PropertyRef Name="id_Cars" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CarUsers">
+    <End Role="Cars" Type="Self.Cars" Multiplicity="1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cars">
+        <PropertyRef Name="id_Cars" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="id_Cars" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBConcesionarioModelStoreContainer">
+    <EntitySet Name="Cars" EntityType="Self.Cars" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Model" EntityType="Self.Model" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CarModel" Association="Self.FK_CarModel">
+      <End Role="Cars" EntitySet="Cars" />
+      <End Role="Model" EntitySet="Model" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarUsers" Association="Self.FK_CarUsers">
+      <End Role="Cars" EntitySet="Cars" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

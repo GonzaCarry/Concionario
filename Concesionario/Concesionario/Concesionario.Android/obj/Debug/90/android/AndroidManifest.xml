@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.concesionario">
   <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28" />
-  <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-  <application android:label="Concesionario.Android" android:name="android.app.Application" android:allowBackup="true" android:icon="@mipmap/icon" android:debuggable="true">
+  <application android:label="Concesionario.Android" android:usesCleartextTraffic="true" android:name="android.app.Application" android:allowBackup="true" android:icon="@mipmap/icon" android:debuggable="true">
     <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:label="Concesionario" android:theme="@style/MainTheme" android:name="md55b1a2064d5d78c2cb62b35d2787c6e51.MainActivity" />
     <activity android:noHistory="true" android:theme="@style/Theme.Splash" android:name="md55b1a2064d5d78c2cb62b35d2787c6e51.SplashActivity">
       <intent-filter>

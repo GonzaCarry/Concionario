@@ -1850,11 +1850,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Concesionario\\Concesionario\\Concesionario\\Concesionario.iOS\\Concesionario.iOS.csproj",
+      "projectUniqueName": "C:\\Concesionario\\Concionario\\Concesionario\\Concesionario\\Concesionario.iOS\\Concesionario.iOS.csproj",
       "projectName": "Concesionario.iOS",
-      "projectPath": "C:\\Concesionario\\Concesionario\\Concesionario\\Concesionario.iOS\\Concesionario.iOS.csproj",
+      "projectPath": "C:\\Concesionario\\Concionario\\Concesionario\\Concesionario\\Concesionario.iOS\\Concesionario.iOS.csproj",
       "packagesPath": "C:\\Users\\gonza\\.nuget\\packages\\",
-      "outputPath": "C:\\Concesionario\\Concesionario\\Concesionario\\Concesionario.iOS\\obj\\",
+      "outputPath": "C:\\Concesionario\\Concionario\\Concesionario\\Concesionario\\Concesionario.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1875,8 +1875,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Concesionario\\Concesionario\\Concesionario\\Concesionario\\Concesionario.csproj": {
-              "projectPath": "C:\\Concesionario\\Concesionario\\Concesionario\\Concesionario\\Concesionario.csproj"
+            "C:\\Concesionario\\Concionario\\Concesionario\\Concesionario\\Concesionario\\Concesionario.csproj": {
+              "projectPath": "C:\\Concesionario\\Concionario\\Concesionario\\Concesionario\\Concesionario\\Concesionario.csproj"
             }
           }
         }

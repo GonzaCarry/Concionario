@@ -2384,11 +2384,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Concesionario\\Concesionario\\Concesionario\\Concesionario.Android\\Concesionario.Android.csproj",
+      "projectUniqueName": "C:\\Concesionario\\Concionario\\Concesionario\\Concesionario\\Concesionario.Android\\Concesionario.Android.csproj",
       "projectName": "Concesionario.Android",
-      "projectPath": "C:\\Concesionario\\Concesionario\\Concesionario\\Concesionario.Android\\Concesionario.Android.csproj",
+      "projectPath": "C:\\Concesionario\\Concionario\\Concesionario\\Concesionario\\Concesionario.Android\\Concesionario.Android.csproj",
       "packagesPath": "C:\\Users\\gonza\\.nuget\\packages\\",
-      "outputPath": "C:\\Concesionario\\Concesionario\\Concesionario\\Concesionario.Android\\obj\\",
+      "outputPath": "C:\\Concesionario\\Concionario\\Concesionario\\Concesionario\\Concesionario.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2409,8 +2409,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Concesionario\\Concesionario\\Concesionario\\Concesionario\\Concesionario.csproj": {
-              "projectPath": "C:\\Concesionario\\Concesionario\\Concesionario\\Concesionario\\Concesionario.csproj"
+            "C:\\Concesionario\\Concionario\\Concesionario\\Concesionario\\Concesionario\\Concesionario.csproj": {
+              "projectPath": "C:\\Concesionario\\Concionario\\Concesionario\\Concesionario\\Concesionario\\Concesionario.csproj"
             }
           }
         }

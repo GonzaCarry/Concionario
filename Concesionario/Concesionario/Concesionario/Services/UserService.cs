@@ -20,10 +20,10 @@ namespace Concesionario.Resources
 
         public UserService()
         {
-            //using (var data = new DataAccess())
-            //{
-            //    apiUrl = data.GetConnection().Url + "/api/Functions";
-            //}
+            using (var data = new DataAccess())
+            {
+                apiUrl = "http://192.168.1.246:40089/Api/Users";
+            }
             if (Users == null)
             {
                 Users = new ObservableCollection<User>();

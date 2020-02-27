@@ -9449,11 +9449,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Concesionario\\Concesionario\\Concesionario\\Concesionario.UWP\\Concesionario.UWP.csproj",
+      "projectUniqueName": "C:\\Concesionario\\Concionario\\Concesionario\\Concesionario\\Concesionario.UWP\\Concesionario.UWP.csproj",
       "projectName": "Concesionario.UWP",
-      "projectPath": "C:\\Concesionario\\Concesionario\\Concesionario\\Concesionario.UWP\\Concesionario.UWP.csproj",
+      "projectPath": "C:\\Concesionario\\Concionario\\Concesionario\\Concesionario\\Concesionario.UWP\\Concesionario.UWP.csproj",
       "packagesPath": "C:\\Users\\gonza\\.nuget\\packages\\",
-      "outputPath": "C:\\Concesionario\\Concesionario\\Concesionario\\Concesionario.UWP\\obj\\",
+      "outputPath": "C:\\Concesionario\\Concionario\\Concesionario\\Concesionario\\Concesionario.UWP\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -9475,8 +9475,8 @@
       "frameworks": {
         "uap10.0.16299": {
           "projectReferences": {
-            "C:\\Concesionario\\Concesionario\\Concesionario\\Concesionario\\Concesionario.csproj": {
-              "projectPath": "C:\\Concesionario\\Concesionario\\Concesionario\\Concesionario\\Concesionario.csproj"
+            "C:\\Concesionario\\Concionario\\Concesionario\\Concesionario\\Concesionario\\Concesionario.csproj": {
+              "projectPath": "C:\\Concesionario\\Concionario\\Concesionario\\Concesionario\\Concesionario\\Concesionario.csproj"
             }
           }
         }

@@ -28,11 +28,11 @@ namespace Concesionario.Views
         {
             if (e.SelectedItem != null)
             {
-                Brand model = (Brand)e.SelectedItem;
-                Context.BrandName = model.BrandName;
+                Models.CarsBrandModel model = (Models.CarsBrandModel)e.SelectedItem;
+                Context.Brand = model.Brand;
                 Context.Headquarters = model.Headquarters;
                 Context.Founder = model.Founder;
-                Context.Id = model.Id;
+                Context.Id_Cars = model.Id_Cars;
             }
         }
     }
